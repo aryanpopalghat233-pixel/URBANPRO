@@ -60,6 +60,70 @@ L.marker([w.lat,w.lng]).addTo(map)
 });
 }
 
+/* ADMIN LOGIN */
+function login(){
+if(user.value==="admin" && pass.value==="1234"){
+loginBox.style.display="none";
+document.getElementById("dashboard").classList.remove("hidden");
+loadDashboard();
+}
+}
+
+/* SWITCH SECTIONS */
+function showSection(section){
+document.querySelectorAll(".content").forEach(c=>c.classList.add("hidden"));
+document.getElementById(section).classList.remove("hidden");
+}
+
+/* LOAD DASHBOARD */
+async function loadDashboard(){
+let bookings = await fetch(API+"/admin/bookings").then(r=>r.json());
+let workers = await fetch(API+"/admin/workers").then(r=>r.json());
+
+document.getElementById("totalBookings").innerText = bookings.length;
+document.getElementById("totalWorkers").innerText = workers.length;
+
+loadBookings();
+loadWorkers();
+}
+
+/* LOAD BOOKINGS TABLE */
+async function loadBookings(){
+let data = await fetch(API+"/admin/bookings").then(r=>r.json());
+
+bookingTable.innerHTML = data.map(x=>`
+<tr>
+<td>${x.name}</td>
+<td>${x.service}</td>
+<td>${x.phone}</td>
+<td><button onclick="delB('${x._id}')">Delete</button></td>
+</tr>
+`).join("");
+}
+
+/* LOAD WORKERS TABLE */
+async function loadWorkers(){
+let data = await fetch(API+"/admin/workers").then(r=>r.json());
+
+workerTable.innerHTML = data.map(x=>`
+<tr>
+<td>${x.name}</td>
+<td>${x.skills}</td>
+<td>${x.phone}</td>
+<td><button onclick="delW('${x._id}')">Delete</button></td>
+</tr>
+`).join("");
+}
+
+/* DELETE */
+function delB(id){
+fetch(API+"/admin/delete-booking/"+id,{method:"DELETE"}).then(loadDashboard);
+}
+
+function delW(id){
+fetch(API+"/admin/delete-worker/"+id,{method:"DELETE"}).then(loadDashboard);
+}  
+
 loadWorkers();
 setInterval(loadWorkers,5000);
 }
