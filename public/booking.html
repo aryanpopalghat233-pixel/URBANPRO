@@ -5,7 +5,12 @@
 </head>
 <body>
 
-<h2>Book Service</h2>
+<nav class="navbar">
+<h1>URBANSERVICE</h1>
+</nav>
+
+<div class="form-container">
+<h2>Book a Service</h2>
 
 <form id="bookingForm">
 <input placeholder="Name" id="name" required>
@@ -15,13 +20,17 @@
 <select id="service">
 <option>Cleaning</option>
 <option>Plumbing</option>
+<option>Electrician</option>
+<option>Beauty</option>
+<option>AC Repair</option>
 </select>
 
 <input placeholder="Sub-service" id="subservice">
 <input type="datetime-local" id="datetime">
 
-<button>Submit</button>
+<button>Book Now</button>
 </form>
+</div>
 
 <script src="script.js"></script>
 
