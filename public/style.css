@@ -1,42 +1,105 @@
 body {
-font-family: Arial;
+font-family: 'Segoe UI', sans-serif;
 margin:0;
+background:#f7f7f7;
 }
 
-nav {
+/* NAVBAR */
+.navbar {
 display:flex;
 justify-content:space-between;
+align-items:center;
+padding:15px 40px;
 background:#111;
-color:white;
-padding:10px;
+color:#fff;
 }
 
-nav a {
+.navbar a {
 color:white;
-margin:10px;
+margin-left:20px;
 text-decoration:none;
 }
 
-.banner {
-padding:50px;
+/* HERO */
+.hero {
 text-align:center;
-background:#eee;
+padding:80px 20px;
+background:linear-gradient(to right,#111,#444);
+color:white;
 }
 
+.hero h2 {
+font-size:40px;
+}
+
+.btn {
+display:inline-block;
+margin-top:20px;
+padding:10px 20px;
+background:#00aaff;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+/* SERVICES */
 .services {
-display:flex;
-justify-content:center;
+padding:40px;
+text-align:center;
+}
+
+.grid {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:20px;
-margin:20px;
+margin-top:20px;
 }
 
 .card {
-padding:20px;
 background:white;
-box-shadow:0 0 10px #ccc;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
 cursor:pointer;
 }
 
+.card:hover {
+transform:translateY(-5px);
+}
+
+/* FORMS */
+.form-container {
+max-width:400px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+input, select {
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button {
+width:100%;
+padding:12px;
+background:#00aaff;
+border:none;
+color:white;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* MAP */
 #map {
 height:400px;
+margin:20px;
+border-radius:10px;
 }
