@@ -1,5 +1,6 @@
 const API = "http://localhost:3000";
 
+/* BOOKING */
 if(document.getElementById("bookingForm")){
 document.getElementById("bookingForm").onsubmit = async (e)=>{
 e.preventDefault();
@@ -17,10 +18,33 @@ datetime:datetime.value
 })
 });
 
-alert("Booked!");
+alert("Booking Successful!");
 };
 }
 
+/* WORKER FORM */
+if(document.getElementById("workerForm")){
+document.getElementById("workerForm").onsubmit = async (e)=>{
+e.preventDefault();
+
+await fetch(API+"/apply-worker",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:wname.value,
+phone:wphone.value,
+skills:skills.value,
+experience:experience.value,
+lat:parseFloat(lat.value),
+lng:parseFloat(lng.value)
+})
+});
+
+alert("Application Submitted!");
+};
+}
+
+/* MAP */
 if(document.getElementById("map")){
 const map = L.map('map').setView([20.5937,78.9629],5);
 
@@ -32,34 +56,10 @@ const data = await res.json();
 
 data.forEach(w=>{
 L.marker([w.lat,w.lng]).addTo(map)
-.bindPopup(w.name);
+.bindPopup(w.name + " - " + w.skills);
 });
 }
 
 loadWorkers();
 setInterval(loadWorkers,5000);
-}
-
-function login(){
-if(user.value=="admin" && pass.value=="1234"){
-dashboard.style.display="block";
-loadAdmin();
-}
-}
-
-async function loadAdmin(){
-let b = await fetch(API+"/admin/bookings").then(r=>r.json());
-let w = await fetch(API+"/admin/workers").then(r=>r.json());
-
-bookings.innerHTML = b.map(x=>`<li>${x.name} <button onclick="delB('${x._id}')">X</button></li>`).join("");
-
-workers.innerHTML = w.map(x=>`<li>${x.name} <button onclick="delW('${x._id}')">X</button></li>`).join("");
-}
-
-function delB(id){
-fetch(API+"/admin/delete-booking/"+id,{method:"DELETE"}).then(loadAdmin);
-}
-
-function delW(id){
-fetch(API+"/admin/delete-worker/"+id,{method:"DELETE"}).then(loadAdmin);
 }
