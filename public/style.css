@@ -103,3 +103,97 @@ height:400px;
 margin:20px;
 border-radius:10px;
 }
+
+/* ADMIN LAYOUT */
+.admin-container {
+display:flex;
+height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+width:220px;
+background:#111;
+color:white;
+padding:20px;
+}
+
+.sidebar h2 {
+margin-bottom:20px;
+}
+
+.sidebar ul {
+list-style:none;
+padding:0;
+}
+
+.sidebar li {
+padding:10px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.sidebar li:hover {
+background:#333;
+}
+
+/* MAIN AREA */
+.main {
+flex:1;
+padding:20px;
+background:#f5f5f5;
+overflow:auto;
+}
+
+/* LOGIN */
+.login-box {
+max-width:300px;
+margin:100px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hidden {
+display:none;
+}
+
+/* STATS */
+.stats {
+display:flex;
+gap:20px;
+}
+
+.stat-card {
+background:white;
+padding:20px;
+border-radius:10px;
+flex:1;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* TABLE */
+table {
+width:100%;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+
+button {
+padding:6px 10px;
+background:red;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
