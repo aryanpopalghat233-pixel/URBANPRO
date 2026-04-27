@@ -127,3 +127,56 @@ fetch(API+"/admin/delete-worker/"+id,{method:"DELETE"}).then(loadDashboard);
 loadWorkers();
 setInterval(loadWorkers,5000);
 }
+/* SERVICES DATA */
+const servicesData = [
+{category:"Cleaning", name:"Home Cleaning"},
+{category:"Cleaning", name:"Deep Cleaning"},
+{category:"Cleaning", name:"Sofa Cleaning"},
+
+{category:"Plumbing", name:"Leak Fix"},
+{category:"Plumbing", name:"Pipe Install"},
+{category:"Plumbing", name:"Drain Cleaning"},
+
+{category:"Electrician", name:"Wiring"},
+{category:"Electrician", name:"Fan Repair"},
+{category:"Electrician", name:"Light Install"},
+
+{category:"Beauty", name:"Facial"},
+{category:"Beauty", name:"Haircut"},
+{category:"Beauty", name:"Makeup"},
+
+{category:"AC Repair", name:"AC Service"},
+{category:"AC Repair", name:"Gas Refill"},
+{category:"AC Repair", name:"Installation"}
+];
+
+/* LOAD SERVICES */
+if(document.getElementById("serviceList")){
+renderServices(servicesData);
+
+searchService.oninput = filterServices;
+categoryFilter.onchange = filterServices;
+}
+
+function renderServices(data){
+serviceList.innerHTML = data.map(s=>`
+<div class="card">
+<h3>${s.name}</h3>
+<p>${s.category}</p>
+<a href="booking.html" class="btn">Book</a>
+</div>
+`).join("");
+}
+
+/* FILTER LOGIC */
+function filterServices(){
+let search = searchService.value.toLowerCase();
+let category = categoryFilter.value;
+
+let filtered = servicesData.filter(s =>
+(s.name.toLowerCase().includes(search)) &&
+(category ? s.category === category : true)
+);
+
+renderServices(filtered);
+}
