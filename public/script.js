@@ -233,3 +233,8 @@ let filtered = servicesData.filter(s =>
 
 renderServices(filtered);
 }
+function openService(name, category){
+localStorage.setItem("serviceName", name);
+localStorage.setItem("serviceCategory", category);
+window.location.href = "service-detail.html";
+}
