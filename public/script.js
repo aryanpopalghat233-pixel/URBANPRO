@@ -129,25 +129,27 @@ setInterval(loadWorkers,5000);
 }
 /* SERVICES DATA */
 const servicesData = [
-{category:"Cleaning", name:"Home Cleaning"},
-{category:"Cleaning", name:"Deep Cleaning"},
-{category:"Cleaning", name:"Sofa Cleaning"},
 
-{category:"Plumbing", name:"Leak Fix"},
-{category:"Plumbing", name:"Pipe Install"},
-{category:"Plumbing", name:"Drain Cleaning"},
+{category:"Cleaning", name:"Home Cleaning", price:999, img:"https://images.unsplash.com/photo-1581578731548-c64695cc6952"},
+{category:"Cleaning", name:"Deep Cleaning", price:1499, img:"https://images.unsplash.com/photo-1603712725038-e9334ae8f39f"},
+{category:"Cleaning", name:"Sofa Cleaning", price:799, img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc"},
 
-{category:"Electrician", name:"Wiring"},
-{category:"Electrician", name:"Fan Repair"},
-{category:"Electrician", name:"Light Install"},
+{category:"Plumbing", name:"Leak Fix", price:299, img:"https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8"},
+{category:"Plumbing", name:"Pipe Install", price:599, img:"https://images.unsplash.com/photo-1607472586893-edb57bdc0e39"},
+{category:"Plumbing", name:"Drain Cleaning", price:399, img:"https://images.unsplash.com/photo-1621905251918-48416bd8575a"},
 
-{category:"Beauty", name:"Facial"},
-{category:"Beauty", name:"Haircut"},
-{category:"Beauty", name:"Makeup"},
+{category:"Electrician", name:"Wiring", price:699, img:"https://images.unsplash.com/photo-1581091215367-59ab6b6a3d72"},
+{category:"Electrician", name:"Fan Repair", price:249, img:"https://images.unsplash.com/photo-1593941707882-a5bac6861d75"},
+{category:"Electrician", name:"Light Install", price:199, img:"https://images.unsplash.com/photo-1509395176047-4a66953fd231"},
 
-{category:"AC Repair", name:"AC Service"},
-{category:"AC Repair", name:"Gas Refill"},
-{category:"AC Repair", name:"Installation"}
+{category:"Beauty", name:"Facial", price:499, img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348"},
+{category:"Beauty", name:"Haircut", price:299, img:"https://images.unsplash.com/photo-1517832606299-7ae9b720a186"},
+{category:"Beauty", name:"Makeup", price:999, img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9"},
+
+{category:"AC Repair", name:"AC Service", price:599, img:"https://images.unsplash.com/photo-1581093458791-9f3c3900dfad"},
+{category:"AC Repair", name:"Gas Refill", price:1499, img:"https://images.unsplash.com/photo-1581093588401-22f3d6f0b1f6"},
+{category:"AC Repair", name:"Installation", price:1299, img:"https://images.unsplash.com/photo-1604147706283-1f84a0a0c8f2"}
+
 ];
 
 /* LOAD SERVICES */
