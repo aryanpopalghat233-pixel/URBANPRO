@@ -213,10 +213,10 @@ categoryFilter.onchange = filterServices;
 
 function renderServices(data){
 serviceList.innerHTML = data.map(s=>`
-<div class="card">
+<div class="card" onclick="openService('${s.name}','${s.category}')">
 <h3>${s.name}</h3>
 <p>${s.category}</p>
-<a href="booking.html" class="btn">Book</a>
+<button class="btn">View Details</button>
 </div>
 `).join("");
 }
