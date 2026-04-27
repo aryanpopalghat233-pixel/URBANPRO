@@ -162,14 +162,24 @@ categoryFilter.onchange = filterServices;
 
 function renderServices(data){
 serviceList.innerHTML = data.map(s=>`
-<div class="card">
+<div class="service-card" onclick="openService('${s.name}','${s.category}')">
+
+<img src="${s.img}" class="service-img"/>
+
+<div class="service-info">
 <h3>${s.name}</h3>
 <p>${s.category}</p>
-<a href="booking.html" class="btn">Book</a>
+
+<div class="price-row">
+<span class="price">₹${s.price}</span>
+<button class="btn small">View</button>
+</div>
+
+</div>
+
 </div>
 `).join("");
 }
-
 /* FILTER LOGIC */
 function filterServices(){
 let search = searchService.value.toLowerCase();
