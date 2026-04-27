@@ -336,3 +336,10 @@ i = (i+1)%banners.length;
 bannerImg.src = banners[i];
 }
 },3000);
+/* AUTO FILL SERVICE */
+if(document.getElementById("service")){
+let selected = localStorage.getItem("selectedService");
+if(selected){
+service.value = selected;
+}
+}
