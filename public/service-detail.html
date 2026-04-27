@@ -8,30 +8,38 @@
 
 <nav class="navbar">
 <h1>URBANSERVICE</h1>
-<a href="services.html">Back</a>
+<a href="services.html">← Back</a>
 </nav>
 
-<div class="detail-container">
+<div class="detail-page">
 
-<h2 id="serviceTitle"></h2>
-<p id="serviceCategory"></p>
+<img id="detailImg" class="detail-img">
+
+<div class="detail-content">
+
+<h2 id="detailName"></h2>
+<p id="detailCategory"></p>
+
+<h3 class="price">₹<span id="detailPrice"></span></h3>
 
 <div class="detail-box">
-<h3>Service Description</h3>
-<p id="serviceDesc"></p>
+<h3>Description</h3>
+<p id="detailDesc"></p>
 </div>
 
 <div class="detail-box">
-<h3>What's Included</h3>
+<h3>Included</h3>
 <ul>
-<li>Professional worker</li>
-<li>On-time service</li>
-<li>Quality tools</li>
-<li>Affordable pricing</li>
+<li>✔ Verified professional</li>
+<li>✔ On-time service</li>
+<li>✔ Quality tools</li>
+<li>✔ Customer support</li>
 </ul>
 </div>
 
-<a href="booking.html" class="btn">Book Now</a>
+<button class="btn big" onclick="bookNow()">Book Now</button>
+
+</div>
 
 </div>
 
