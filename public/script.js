@@ -282,3 +282,57 @@ serviceTitle.innerText = name;
 serviceCategory.innerText = category;
 serviceDesc.innerText = serviceDetails[name] || "High quality professional service.";
 }
+/* SEARCH DATA */
+const searchData = [
+"Home Cleaning","Deep Cleaning","Sofa Cleaning",
+"Plumbing","Leak Fix","Pipe Install",
+"Electrician","Fan Repair","Light Install",
+"Beauty","Facial","Haircut",
+"AC Repair","Gas Refill","Installation"
+];
+
+/* SEARCH LOGIC */
+if(document.getElementById("searchInput")){
+searchInput.oninput = function(){
+let value = this.value.toLowerCase();
+
+if(!value){
+suggestions.style.display = "none";
+return;
+}
+
+let filtered = searchData.filter(s=>s.toLowerCase().includes(value));
+
+suggestions.innerHTML = filtered.map(s=>`
+<div onclick="selectService('${s}')">${s}</div>
+`).join("");
+
+suggestions.style.display = "block";
+};
+}
+
+function selectService(name){
+localStorage.setItem("serviceName", name);
+window.location.href = "service-detail.html";
+}
+
+/* CATEGORY CLICK */
+function goService(service){
+localStorage.setItem("selectedCategory", service);
+window.location.href = "services.html";
+}
+
+/* BANNER SLIDER */
+const banners = [
+"https://images.unsplash.com/photo-1581578731548-c64695cc6952",
+"https://images.unsplash.com/photo-1603712725038-e9334ae8f39f",
+"https://images.unsplash.com/photo-1555041469-a586c61ea9bc"
+];
+
+let i = 0;
+setInterval(()=>{
+if(document.getElementById("bannerImg")){
+i = (i+1)%banners.length;
+bannerImg.src = banners[i];
+}
+},3000);
