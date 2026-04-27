@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Services</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Services</h2>
+<nav class="navbar">
+<h1>URBANSERVICE</h1>
+<a href="index.html">Home</a>
+</nav>
 
-<ul>
-<li>Cleaning → Home Cleaning, Deep Cleaning, Sofa Cleaning</li>
-<li>Plumbing → Leak Fix, Pipe Install, Drain Cleaning</li>
-<li>Electrician → Wiring, Fan Repair, Light Install</li>
-<li>Beauty → Facial, Haircut, Makeup</li>
-<li>AC Repair → Service, Gas Refill, Installation</li>
-</ul>
+<section class="services">
+<h2>Find Your Service</h2>
 
+<div class="toolbar">
+<input id="searchService" placeholder="Search services...">
+<select id="categoryFilter">
+<option value="">All Categories</option>
+<option value="Cleaning">Cleaning</option>
+<option value="Plumbing">Plumbing</option>
+<option value="Electrician">Electrician</option>
+<option value="Beauty">Beauty</option>
+<option value="AC Repair">AC Repair</option>
+</select>
+</div>
+
+<div id="serviceList" class="grid"></div>
+
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
