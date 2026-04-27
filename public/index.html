@@ -20,6 +20,7 @@
 </div>
 
 <div class="right">
+<span class="location">📍 Mumbai</span>
 <button class="login-btn">Login</button>
 </div>
 </nav>
@@ -29,40 +30,40 @@
 
 <h1>Home services at your doorstep</h1>
 
-<div class="uc-search-box">
+<div class="hero-container">
 
-<h3>What are you looking for?</h3>
+<!-- LEFT SIDE -->
+<div class="left-box">
 
+<!-- SEARCH -->
+<div class="search-bar">
+<input id="searchInput" placeholder="Search for services...">
+<div id="suggestions"></div>
+</div>
+
+<!-- CATEGORY GRID -->
 <div class="uc-grid">
 
-<div class="uc-card" onclick="goService('InstaHelp')">
-<img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
-<p>InstaHelp</p>
+<div class="uc-card" onclick="goService('Cleaning')">🧹 Cleaning</div>
+<div class="uc-card" onclick="goService('Beauty')">💄 Beauty</div>
+<div class="uc-card" onclick="goService('Plumbing')">🔧 Plumbing</div>
+<div class="uc-card" onclick="goService('Electrician')">💡 Electrician</div>
+<div class="uc-card" onclick="goService('AC Repair')">❄️ AC Repair</div>
+
 </div>
 
-<div class="uc-card" onclick="goService('Women Salon')">
-<img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png">
-<p>Women's Salon & Spa</p>
 </div>
 
-<div class="uc-card" onclick="goService('Men Salon')">
-<img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png">
-<p>Men's Salon & Massage</p>
+<!-- RIGHT SIDE (BANNER + SUMMARY) -->
+<div class="right-box">
+
+<div class="banner">
+<img id="bannerImg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
 </div>
 
-<div class="uc-card" onclick="goService('Cleaning')">
-<img src="https://cdn-icons-png.flaticon.com/512/995/995053.png">
-<p>Cleaning & Pest Control</p>
-</div>
-
-<div class="uc-card" onclick="goService('AC Repair')">
-<img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
-<p>AC & Appliance Repair</p>
-</div>
-
-<div class="uc-card highlight">
-<h4>2-years,<br>₹0 cost.</h4>
-<p>Native Water Purifier</p>
+<div class="summary">
+<h3>Your Bookings</h3>
+<p>No services booked yet</p>
 </div>
 
 </div>
@@ -71,12 +72,6 @@
 
 </section>
 
-<script>
-function goService(service){
-localStorage.setItem("selectedCategory", service);
-window.location.href = "services.html";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
