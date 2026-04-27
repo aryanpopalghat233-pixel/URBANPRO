@@ -6,34 +6,70 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-<h1>URBANSERVICE</h1>
-<div>
-<a href="services.html">Services</a>
-<a href="booking.html">Book</a>
-<a href="tracking.html">Track</a>
-<a href="worker.html">Become a Worker</a>
+<div class="logo">
+<span class="logo-box">UC</span>
+<h2>UrbanService</h2>
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Beauty</a>
 </div>
 </nav>
 
-<section class="hero">
-<h2>Quality Home Services, On Demand</h2>
-<p>Book trusted professionals instantly</p>
-<a href="booking.html" class="btn">Book Now</a>
-</section>
+<!-- HERO -->
+<section class="hero2">
+<h1>Home services at your doorstep</h1>
 
-<section class="services">
-<h2>Our Services</h2>
+<div class="search-box">
+<h3>What are you looking for?</h3>
 
-<div class="grid">
-<div class="card">🧹 Cleaning</div>
-<div class="card">🔧 Plumbing</div>
-<div class="card">💡 Electrician</div>
-<div class="card">💄 Beauty</div>
-<div class="card">❄️ AC Repair</div>
+<div class="category-grid">
+
+<div class="cat-card" onclick="goService('InstaHelp')">
+<img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
+<p>InstaHelp</p>
 </div>
 
+<div class="cat-card" onclick="goService('Women Salon')">
+<img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png">
+<p>Women's Salon & Spa</p>
+</div>
+
+<div class="cat-card" onclick="goService('Men Salon')">
+<img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png">
+<p>Men's Salon & Massage</p>
+</div>
+
+<div class="cat-card" onclick="goService('Cleaning')">
+<img src="https://cdn-icons-png.flaticon.com/512/995/995053.png">
+<p>Cleaning & Pest Control</p>
+</div>
+
+<div class="cat-card" onclick="goService('AC Repair')">
+<img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
+<p>AC & Appliance Repair</p>
+</div>
+
+<div class="cat-card highlight">
+<p>2-years,<br>₹0 cost.</p>
+<p>Water Purifier</p>
+</div>
+
+</div>
+
+</div>
 </section>
+
+<script>
+function goService(service){
+localStorage.setItem("selectedCategory", service);
+window.location.href = "services.html";
+}
+</script>
 
 </body>
 </html>
