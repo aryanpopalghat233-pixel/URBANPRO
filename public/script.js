@@ -238,3 +238,35 @@ localStorage.setItem("serviceName", name);
 localStorage.setItem("serviceCategory", category);
 window.location.href = "service-detail.html";
 }
+/* SERVICE DETAILS DATA */
+const serviceDetails = {
+"Home Cleaning": "Complete cleaning of your home including rooms, kitchen and bathroom.",
+"Deep Cleaning": "Intensive cleaning with advanced tools and chemicals.",
+"Sofa Cleaning": "Professional sofa shampooing and stain removal.",
+
+"Leak Fix": "Fix all types of water leakage problems.",
+"Pipe Install": "Installation of new pipes and fittings.",
+"Drain Cleaning": "Remove blockages and clean drainage system.",
+
+"Wiring": "Complete house wiring and repair.",
+"Fan Repair": "Fix ceiling and table fans.",
+"Light Install": "Installation of lights and fixtures.",
+
+"Facial": "Professional skincare and facial treatment.",
+"Haircut": "Stylish haircut at home.",
+"Makeup": "Party and bridal makeup service.",
+
+"AC Service": "Regular AC maintenance and cleaning.",
+"Gas Refill": "Refill AC gas for cooling efficiency.",
+"Installation": "AC installation service at home."
+};
+
+/* LOAD DETAIL PAGE */
+if(document.getElementById("serviceTitle")){
+let name = localStorage.getItem("serviceName");
+let category = localStorage.getItem("serviceCategory");
+
+serviceTitle.innerText = name;
+serviceCategory.innerText = category;
+serviceDesc.innerText = serviceDetails[name] || "High quality professional service.";
+}
